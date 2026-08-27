@@ -18,9 +18,9 @@ fi
 # shellcheck disable=SC2086
 docker run --name nduja-games-website \
   --restart unless-stopped \
-  -e VIRTUAL_HOST=nduja.games,www.nduja.games \
+  -e VIRTUAL_HOST=nduja.games \
   -e VIRTUAL_PORT=9080 \
-  -e LETSENCRYPT_HOST=nduja.games,www.nduja.games \
+  -e LETSENCRYPT_HOST=nduja.games \
   -e LETSENCRYPT_EMAIL=info@ndujalabs.com \
   -e SITE_HOST=nduja.games \
   -e SITE_URL=https://nduja.games \
