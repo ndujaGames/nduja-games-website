@@ -1,0 +1,25 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<article class="legal-page">
+  <header class="legal-head">
+    <p class="legal-breadcrumb">
+      <a href="/<%= lang %>/docs"><%= lang === 'it' ? 'Documentazione' : 'Documentation' %></a>
+      <span aria-hidden="true"> / </span>
+      <%= projectName %>
+    </p>
+    <h1><%= doc.title %></h1>
+    <p class="legal-updated"><%= lang === 'it' ? 'Ultimo aggiornamento' : 'Last updated' %>: <%= doc.updated %></p>
+  </header>
+
+  <% for (const section of doc.sections) { %>
+    <section class="legal-section">
+      <h2><%= section.heading %></h2>
+      <% for (const paragraph of section.body) { %>
+        <p><%= paragraph %></p>
+      <% } %>
+    </section>
+  <% } %>
+</article>
+
+<%- include('partials/footer') %>

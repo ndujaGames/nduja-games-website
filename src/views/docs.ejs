@@ -1,0 +1,50 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<article class="doc-page">
+  <h1><%= lang === 'it' ? 'Documentazione' : 'Documentation' %></h1>
+  <p class="doc-lead">
+    <%= lang === 'it'
+      ? 'Riferimenti per progetti, API e documenti legali ndujaGames.'
+      : 'References for ndujaGames projects, APIs, and legal documents.' %>
+  </p>
+
+  <section class="doc-block">
+    <h2>API</h2>
+    <p>
+      <%= lang === 'it' ? 'Endpoint base:' : 'Base endpoint:' %>
+      <code><%= siteUrl %>/api/v1/</code>
+    </p>
+    <ul class="doc-list">
+      <li><a href="/api/v1/health"><code>GET /api/v1/health</code></a> — <%= lang === 'it' ? 'stato del servizio' : 'service status' %></li>
+    </ul>
+    <p class="doc-note">
+      <%= lang === 'it'
+        ? 'Player, punteggi e classifiche arriveranno in una versione successiva.'
+        : 'Player registration, scores, and leaderboards will arrive in a later release.' %>
+    </p>
+  </section>
+
+  <section class="doc-block">
+    <h2><%= lang === 'it' ? 'Legale per progetto' : 'Legal by project' %></h2>
+    <% for (const project of legalProjects) { %>
+      <div class="doc-project">
+        <h3><%= project.name %></h3>
+        <ul class="doc-list">
+          <li>
+            <a href="/<%= lang %>/docs/<%= project.id %>/terms">
+              <%= lang === 'it' ? 'Termini di servizio' : 'Terms of Service' %>
+            </a>
+          </li>
+          <li>
+            <a href="/<%= lang %>/docs/<%= project.id %>/privacy">
+              <%= lang === 'it' ? 'Informativa privacy' : 'Privacy Policy' %>
+            </a>
+          </li>
+        </ul>
+      </div>
+    <% } %>
+  </section>
+</article>
+
+<%- include('partials/footer') %>

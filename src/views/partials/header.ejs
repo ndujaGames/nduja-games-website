@@ -1,0 +1,19 @@
+<% if (isBeta) { %>
+  <div class="beta-banner">Beta preview — <%= siteUrl %></div>
+<% } %>
+<header class="site-header">
+  <a class="brand" href="/<%= lang %>/">
+    <span class="brand-mark"><%= siteMark %></span><%= siteName %>
+  </a>
+  <div class="site-header-end">
+    <nav class="site-nav" aria-label="<%= lang === 'it' ? 'Principale' : 'Main' %>">
+      <a href="/<%= lang %>/"><%= lang === 'it' ? 'Progetti' : 'Projects' %></a>
+      <a href="/<%= lang %>/docs"><%= lang === 'it' ? 'Documentazione' : 'Docs' %></a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="<%= lang === 'it' ? 'Lingua' : 'Language' %>">
+      <a href="<%= langPath('en') %>" class="lang-btn<%= lang === 'en' ? ' is-on' : '' %>" lang="en" hreflang="en" aria-current="<%= lang === 'en' ? 'true' : 'false' %>">EN</a>
+      <a href="<%= langPath('it') %>" class="lang-btn<%= lang === 'it' ? ' is-on' : '' %>" lang="it" hreflang="it" aria-current="<%= lang === 'it' ? 'true' : 'false' %>">IT</a>
+    </div>
+  </div>
+</header>
+<main class="site-main">

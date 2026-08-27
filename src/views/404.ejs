@@ -1,0 +1,11 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<section class="doc-page">
+  <h1>404</h1>
+  <p><%= lang === 'it' ? 'Pagina non trovata.' : 'Page not found.' %></p>
+  <p><code><%= path %></code></p>
+  <p><a href="/<%= lang %>/"><%= lang === 'it' ? 'Torna alla home' : 'Back home' %></a></p>
+</section>
+
+<%- include('partials/footer') %>

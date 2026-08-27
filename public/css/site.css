@@ -1,0 +1,404 @@
+:root {
+  --paper: #f3eee6;
+  --paper-2: #ebe4d9;
+  --ink: #1c1612;
+  --ink-soft: #5c534a;
+  --accent: #802050;
+  --line: rgba(28, 22, 18, 0.12);
+  --card: rgba(255, 255, 255, 0.55);
+  --beta: #3d2a14;
+  --beta-ink: #f8ead0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Nunito", system-ui, sans-serif;
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, transparent 95%, rgba(0, 0, 0, 0.04) 100%),
+    var(--paper);
+  background-size: 10px 100%;
+  line-height: 1.55;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.beta-banner {
+  background: var(--beta);
+  color: var(--beta-ink);
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 8px 12px;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 24px 20px 0;
+}
+
+.brand {
+  font-family: "Hina Mincho", Georgia, serif;
+  font-size: 1.5rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand-mark {
+  font-family: Georgia, serif;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.site-nav a {
+  color: var(--ink-soft);
+}
+
+.site-header-end {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: auto;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 4px;
+}
+
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+}
+
+.lang-btn.is-on {
+  background: var(--paper-2);
+  color: var(--ink);
+  border-color: var(--ink-soft);
+}
+
+.site-main {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 28px 20px 64px;
+}
+
+.hero {
+  padding: 24px 0 40px;
+  text-align: center;
+}
+
+.hero-title {
+  margin: 0;
+  font-family: "Hina Mincho", Georgia, serif;
+  font-size: clamp(2.8rem, 10vw, 4.5rem);
+  line-height: 0.95;
+  font-weight: 400;
+}
+
+.hero-mark {
+  font-family: Georgia, serif;
+}
+
+.hero-lead {
+  max-width: min(44rem, 100%);
+  margin: 18px auto 0;
+  color: var(--ink-soft);
+  font-size: 1.08rem;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+.section-title {
+  margin: 0 0 18px;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.project-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 20px;
+}
+
+.project-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+}
+
+.project-card-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  min-height: 300px;
+}
+
+.project-shot-wrap {
+  background: #120f14;
+  border-right: 1px solid var(--line);
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.project-shot-wrap a {
+  display: flex;
+  width: 100%;
+  min-height: 0;
+}
+
+.project-shot {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: contain;
+  object-position: top center;
+}
+
+.project-card-body {
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.project-card h3 {
+  margin: 0;
+}
+
+.project-description {
+  margin: 10px 0 0;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.project-card-foot {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+  padding-top: 18px;
+  width: 100%;
+}
+
+.project-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.badge {
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(128, 32, 80, 0.08);
+  border-radius: 999px;
+  padding: 3px 8px;
+}
+
+.badge-live {
+  color: #2d6a3a;
+  background: rgba(45, 106, 58, 0.1);
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.project-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.project-link,
+.project-soon {
+  flex-shrink: 0;
+  font-weight: 800;
+}
+
+.project-soon {
+  color: var(--ink-soft);
+}
+
+.doc-page,
+.legal-page {
+  max-width: 42rem;
+}
+
+.doc-page h1,
+.legal-page h1 {
+  margin: 0;
+  font-family: "Hina Mincho", Georgia, serif;
+  font-size: 2rem;
+}
+
+.doc-lead,
+.legal-updated {
+  color: var(--ink-soft);
+}
+
+.doc-block,
+.legal-section {
+  margin-top: 28px;
+}
+
+.doc-block h2,
+.legal-section h2 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+
+.doc-project {
+  margin-top: 18px;
+}
+
+.doc-project h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.legal-breadcrumb {
+  margin: 0 0 10px;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.doc-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.doc-note {
+  margin-top: 14px;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
+.site-footer {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 20px 32px;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.site-footer-line {
+  margin: 0;
+}
+
+.footer-sep {
+  margin: 0 0.45em;
+  color: var(--line);
+}
+
+.site-footer a {
+  color: var(--ink-soft);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+@media (min-width: 720px) {
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 719px) {
+  .project-card-layout {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .project-shot-wrap {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .project-shot {
+    min-height: 0;
+    max-height: 420px;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-header-end {
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 0;
+  }
+}
