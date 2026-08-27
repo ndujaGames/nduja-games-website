@@ -9,6 +9,8 @@ if (fs.existsSync(envPath)) {
   dotenv.config({ path: envPath, quiet: true });
 }
 
+const pkg = JSON.parse(fs.readFileSync(path.join(rootDir, "package.json"), "utf8"));
+
 const nodeEnv = process.env.NODE_ENV || "development";
 const isProduction = nodeEnv === "production";
 const siteHost = process.env.SITE_HOST || "nduja.games";
@@ -27,6 +29,8 @@ export const config = {
   siteUrl: process.env.SITE_URL || `https://${siteHost}`,
   isBeta: process.env.SITE_BETA !== "false",
   trustProxy: process.env.TRUST_PROXY !== "false",
+  /** Bumped via package.json version to bust CDN cache for static CSS. */
+  assetVersion: process.env.ASSET_VERSION || pkg.version,
   /** Public contact until @nduja.games mail is live. Legal entity: ndujaLabs (info@ndujalabs.com). */
   contactEmail: process.env.CONTACT_EMAIL || "ndujagames@sullo.co",
   postgres: {

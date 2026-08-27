@@ -39,6 +39,7 @@ app.use((req, res, next) => {
   res.locals.siteMark = config.siteMark;
   res.locals.brandName = brandName();
   res.locals.isBeta = config.isBeta;
+  res.locals.assetVersion = config.assetVersion;
   res.locals.year = new Date().getFullYear();
   next();
 });
