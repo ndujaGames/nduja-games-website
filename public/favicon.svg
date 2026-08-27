@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="ndujaGames">
+  <rect width="128" height="128" rx="28" fill="#000000"/>
+  <text
+    x="64"
+    y="44"
+    text-anchor="middle"
+    font-family="Nunito, ui-rounded, system-ui, sans-serif"
+    font-size="34"
+    font-weight="800"
+    fill="#ffffff"
+  >&#8217;nG</text>
+  <g aria-hidden="true">
+    <!-- 3 x 8 spectrum (hex: favicon renderers often ignore hsl()) -->
+    <!-- row 0 -->
+    <rect x="5" y="56" width="13" height="13" rx="2.5" fill="#eb3333"/>
+    <rect x="20" y="56" width="13" height="13" rx="2.5" fill="#ebd433"/>
+    <rect x="35" y="56" width="13" height="13" rx="2.5" fill="#61eb33"/>
+    <rect x="50" y="56" width="13" height="13" rx="2.5" fill="#33eba6"/>
+    <rect x="65" y="56" width="13" height="13" rx="2.5" fill="#338feb"/>
+    <rect x="80" y="56" width="13" height="13" rx="2.5" fill="#6152eb"/>
+    <rect x="95" y="56" width="13" height="13" rx="2.5" fill="#8333eb"/>
+    <rect x="110" y="56" width="13" height="13" rx="2.5" fill="#eb33a6"/>
+    <!-- row 1 -->
+    <rect x="5" y="71" width="13" height="13" rx="2.5" fill="#eb3333"/>
+    <rect x="20" y="71" width="13" height="13" rx="2.5" fill="#ebd433"/>
+    <rect x="35" y="71" width="13" height="13" rx="2.5" fill="#61eb33"/>
+    <rect x="50" y="71" width="13" height="13" rx="2.5" fill="#33eba6"/>
+    <rect x="65" y="71" width="13" height="13" rx="2.5" fill="#338feb"/>
+    <rect x="80" y="71" width="13" height="13" rx="2.5" fill="#6152eb"/>
+    <rect x="95" y="71" width="13" height="13" rx="2.5" fill="#8333eb"/>
+    <rect x="110" y="71" width="13" height="13" rx="2.5" fill="#eb33a6"/>
+    <!-- row 2 -->
+    <rect x="5" y="86" width="13" height="13" rx="2.5" fill="#eb3333"/>
+    <rect x="20" y="86" width="13" height="13" rx="2.5" fill="#ebd433"/>
+    <rect x="35" y="86" width="13" height="13" rx="2.5" fill="#61eb33"/>
+    <rect x="50" y="86" width="13" height="13" rx="2.5" fill="#33eba6"/>
+    <rect x="65" y="86" width="13" height="13" rx="2.5" fill="#338feb"/>
+    <rect x="80" y="86" width="13" height="13" rx="2.5" fill="#6152eb"/>
+    <rect x="95" y="86" width="13" height="13" rx="2.5" fill="#8333eb"/>
+    <rect x="110" y="86" width="13" height="13" rx="2.5" fill="#eb33a6"/>
+    <g fill="#ffffff" opacity="0.2">
+      <rect x="5" y="56" width="13" height="5" rx="2.5"/>
+      <rect x="20" y="56" width="13" height="5" rx="2.5"/>
+      <rect x="35" y="56" width="13" height="5" rx="2.5"/>
+      <rect x="50" y="56" width="13" height="5" rx="2.5"/>
+      <rect x="65" y="56" width="13" height="5" rx="2.5"/>
+      <rect x="80" y="56" width="13" height="5" rx="2.5"/>
+      <rect x="95" y="56" width="13" height="5" rx="2.5"/>
+      <rect x="110" y="56" width="13" height="5" rx="2.5"/>
+      <rect x="5" y="71" width="13" height="5" rx="2.5"/>
+      <rect x="20" y="71" width="13" height="5" rx="2.5"/>
+      <rect x="35" y="71" width="13" height="5" rx="2.5"/>
+      <rect x="50" y="71" width="13" height="5" rx="2.5"/>
+      <rect x="65" y="71" width="13" height="5" rx="2.5"/>
+      <rect x="80" y="71" width="13" height="5" rx="2.5"/>
+      <rect x="95" y="71" width="13" height="5" rx="2.5"/>
+      <rect x="110" y="71" width="13" height="5" rx="2.5"/>
+      <rect x="5" y="86" width="13" height="5" rx="2.5"/>
+      <rect x="20" y="86" width="13" height="5" rx="2.5"/>
+      <rect x="35" y="86" width="13" height="5" rx="2.5"/>
+      <rect x="50" y="86" width="13" height="5" rx="2.5"/>
+      <rect x="65" y="86" width="13" height="5" rx="2.5"/>
+      <rect x="80" y="86" width="13" height="5" rx="2.5"/>
+      <rect x="95" y="86" width="13" height="5" rx="2.5"/>
+      <rect x="110" y="86" width="13" height="5" rx="2.5"/>
+    </g>
+  </g>
+</svg>

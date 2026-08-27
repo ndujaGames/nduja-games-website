@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="ndujaGames">
+  <rect width="128" height="128" rx="28" fill="#000000"/>
+  <text
+    x="64"
+    y="74"
+    text-anchor="middle"
+    font-family="Nunito, ui-rounded, system-ui, sans-serif"
+    font-size="52"
+    font-weight="800"
+    fill="#ffffff"
+  >&#8217;nG</text>
+</svg>
