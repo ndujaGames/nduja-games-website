@@ -324,15 +324,27 @@ a:hover {
   color: var(--ink-soft);
 }
 
+.guide-play {
+  margin: 14px 0 0;
+  font-weight: 800;
+}
+
+.guide-also {
+  margin-top: 36px;
+  font-size: 0.92rem;
+}
+
+.legal-section .doc-list {
+  margin: 8px 0 0;
+}
+
+.legal-section .doc-list li + li {
+  margin-top: 6px;
+}
+
 .doc-list {
   margin: 0;
   padding-left: 1.2rem;
-}
-
-.doc-note {
-  margin-top: 14px;
-  font-size: 0.92rem;
-  color: var(--ink-soft);
 }
 
 code {
@@ -376,6 +388,18 @@ code {
 @media (min-width: 720px) {
   .project-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .site-header,
+  .site-main,
+  .site-footer {
+    max-width: 1440px;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 

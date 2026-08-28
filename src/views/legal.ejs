@@ -6,7 +6,7 @@
     <p class="legal-breadcrumb">
       <a href="/<%= lang %>/docs"><%= lang === 'it' ? 'Documentazione' : 'Documentation' %></a>
       <span aria-hidden="true"> / </span>
-      <%= projectName %>
+      <a href="/<%= lang %>/docs/<%= projectId %>"><%= projectName %></a>
     </p>
     <h1><%= doc.title %></h1>
     <p class="legal-updated"><%= lang === 'it' ? 'Ultimo aggiornamento' : 'Last updated' %>: <%= doc.updated %></p>

@@ -1,0 +1,51 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<article class="legal-page">
+  <header class="legal-head">
+    <p class="legal-breadcrumb">
+      <a href="/<%= lang %>/docs"><%= lang === 'it' ? 'Documentazione' : 'Documentation' %></a>
+      <span aria-hidden="true"> / </span>
+      <%= projectName %>
+    </p>
+    <h1><%= doc.title %></h1>
+    <p class="doc-lead"><%= doc.lead %></p>
+    <% if (playHref) { %>
+      <p class="guide-play">
+        <a href="<%= playHref %>" rel="noreferrer" target="_blank">
+          <%= lang === 'it' ? 'Gioca' : 'Play' %> →
+        </a>
+      </p>
+    <% } %>
+  </header>
+
+  <% for (const section of doc.sections) { %>
+    <section class="legal-section">
+      <h2><%= section.heading %></h2>
+      <% if (section.body) { %>
+        <% for (const paragraph of section.body) { %>
+          <p><%= paragraph %></p>
+        <% } %>
+      <% } %>
+      <% if (section.list) { %>
+        <ul class="doc-list">
+          <% for (const item of section.list) { %>
+            <li><%= item %></li>
+          <% } %>
+        </ul>
+      <% } %>
+    </section>
+  <% } %>
+
+  <nav class="guide-also" aria-label="<%= lang === 'it' ? 'Altri documenti' : 'Other documents' %>">
+    <a href="/<%= lang %>/docs/<%= projectId %>/terms">
+      <%= lang === 'it' ? 'Termini di servizio' : 'Terms of Service' %>
+    </a>
+    <span aria-hidden="true"> · </span>
+    <a href="/<%= lang %>/docs/<%= projectId %>/privacy">
+      <%= lang === 'it' ? 'Informativa privacy' : 'Privacy Policy' %>
+    </a>
+  </nav>
+</article>
+
+<%- include('partials/footer') %>

@@ -81,4 +81,20 @@ export const projects = [
     },
     status: "beta",
   },
+  {
+    id: "chessrelay",
+    name: "ChessRelay",
+    tags: ["Game", "Puzzle", "Mobile"],
+    description: {
+      en: "Pass the baton from piece to piece. Capture with chess moves until the board is clear — or close enough.",
+      it: "Passa il testimone da pezzo a pezzo. Cattura con le mosse degli scacchi fino a ripulire la scacchiera — o quasi.",
+    },
+    href: process.env.CHESSRELAY_URL || "https://chessrelay.nduja.games",
+    image: "/img/chessrelay.png",
+    imageAlt: {
+      en: "ChessRelay puzzle board on a phone screen",
+      it: "Scacchiera ChessRelay su schermo mobile",
+    },
+    status: "beta",
+  },
 ];

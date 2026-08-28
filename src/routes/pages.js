@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { config, projects, brandName } from "../config.js";
+import { getGuide } from "../content/guides.js";
 import { getLegalDoc, legalCatalog, legalKinds } from "../content/legal.js";
 import { preferredLang, resolveLang, pathWithLang } from "../lang.js";
 
@@ -21,11 +22,37 @@ function pageLocals(req, extra = {}) {
   };
 }
 
+function notFound(req, res, lang) {
+  return res.status(404).render("404", pageLocals(req, { title: "Not found", path: req.path, lang }));
+}
+
+function docsProjects() {
+  const byId = new Map(projects.map((p) => [p.id, p]));
+  return legalCatalog().map((legal) => ({
+    id: legal.id,
+    name: legal.name,
+    href: byId.get(legal.id)?.href ?? null,
+  }));
+}
+
+function renderGuide(req, res, { projectId, lang }) {
+  const doc = getGuide(projectId, lang);
+  if (!doc) return notFound(req, res, lang);
+  const project = projects.find((p) => p.id === projectId);
+  const catalog = legalCatalog().find((p) => p.id === projectId);
+  return res.render("guide", pageLocals(req, {
+    doc,
+    projectId,
+    projectName: catalog?.name ?? project?.name ?? projectId,
+    playHref: project?.href ?? null,
+    title: doc.title,
+    lang,
+  }));
+}
+
 function renderLegal(req, res, { projectId, kind, lang }) {
   const doc = getLegalDoc(projectId, kind, lang);
-  if (!doc) {
-    return res.status(404).render("404", pageLocals(req, { title: "Not found", path: req.path, lang }));
-  }
+  if (!doc) return notFound(req, res, lang);
   const project = legalCatalog().find((p) => p.id === projectId);
   return res.render("legal", pageLocals(req, {
     doc,
@@ -40,7 +67,7 @@ function renderLegal(req, res, { projectId, kind, lang }) {
 function renderDocsIndex(req, res, lang) {
   return res.render("docs", pageLocals(req, {
     title: lang === "it" ? "Documentazione" : "Documentation",
-    legalProjects: legalCatalog(),
+    legalProjects: docsProjects(),
     lang,
   }));
 }
@@ -58,11 +85,12 @@ for (const lang of ["en", "it"]) {
   router.get(`/${lang}`, home);
   router.get(`/${lang}/`, home);
   router.get(`/${lang}/docs`, (req, res) => renderDocsIndex(req, res, lang));
+  router.get(`/${lang}/docs/:project`, (req, res) => {
+    return renderGuide(req, res, { projectId: req.params.project, lang });
+  });
   router.get(`/${lang}/docs/:project/:kind`, (req, res) => {
     const { project, kind } = req.params;
-    if (!legalKinds.includes(kind)) {
-      return res.status(404).render("404", pageLocals(req, { title: "Not found", path: req.path, lang }));
-    }
+    if (!legalKinds.includes(kind)) return notFound(req, res, lang);
     return renderLegal(req, res, { projectId: project, kind, lang });
   });
 }

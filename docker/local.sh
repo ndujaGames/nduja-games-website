@@ -24,6 +24,7 @@ docker run --name nduja-games-website-local \
   -e SITE_URL=http://nduja.games.local \
   -e ABDOKU_URL=http://abdoku.nduja.games.local \
   -e CHROMAWELL_URL=http://chromawell.nduja.games.local \
+  -e CHESSRELAY_URL=http://chessrelay.nduja.games.local \
   -e SITE_BETA=true \
   -e NODE_ENV=development \
   -e TRUST_PROXY=true \

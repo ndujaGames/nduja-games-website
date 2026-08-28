@@ -187,6 +187,17 @@ export const legalByProject = {
       it: gameTerms("Chromawell", "it"),
     },
   },
+  chessrelay: {
+    name: "ChessRelay",
+    privacy: {
+      en: gamePrivacy("ChessRelay", "en"),
+      it: gamePrivacy("ChessRelay", "it"),
+    },
+    terms: {
+      en: gameTerms("ChessRelay", "en"),
+      it: gameTerms("ChessRelay", "it"),
+    },
+  },
 };
 
 export const legalKinds = ["privacy", "terms"];

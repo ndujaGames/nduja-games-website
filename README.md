@@ -7,6 +7,7 @@ Site, documentation, legal pages, and API for **ndujaGames** at [nduja.games](ht
 | `nduja.games` | ndujaGames hub (this server) |
 | `abdoku.nduja.games` | ABdoku web app |
 | `chromawell.nduja.games` | Chromawell web app |
+| `chessrelay.nduja.games` | ChessRelay web app |
 
 ## Routes
 
@@ -17,6 +18,8 @@ Site, documentation, legal pages, and API for **ndujaGames** at [nduja.games](ht
 | `/it/` | Home + projects (Italian) |
 | `/en/docs` | Documentation index (English) |
 | `/it/docs` | Documentation index (Italian) |
+| `/en/docs/:project` | How to play (English) |
+| `/it/docs/:project` | How to play (Italian) |
 | `/en/docs/:project/privacy` | Privacy (English) |
 | `/en/docs/:project/terms` | Terms (English) |
 | `/it/docs/:project/privacy` | Privacy (Italian) |
@@ -46,7 +49,7 @@ Expects nginx-proxy + Let's Encrypt companion on the host.
 Add to `/etc/hosts` (point at your dev machine):
 
 ```
-127.0.0.1 nduja.games.local abdoku.nduja.games.local chromawell.nduja.games.local
+127.0.0.1 nduja.games.local abdoku.nduja.games.local chromawell.nduja.games.local chessrelay.nduja.games.local
 ```
 
 Then:

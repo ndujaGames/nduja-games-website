@@ -5,32 +5,21 @@
   <h1><%= lang === 'it' ? 'Documentazione' : 'Documentation' %></h1>
   <p class="doc-lead">
     <%= lang === 'it'
-      ? 'Riferimenti per progetti, API e documenti legali ndujaGames.'
-      : 'References for ndujaGames projects, APIs, and legal documents.' %>
+      ? 'Come si gioca e documenti legali dei progetti ndujaGames.'
+      : 'How to play and legal documents for ndujaGames projects.' %>
   </p>
 
   <section class="doc-block">
-    <h2>API</h2>
-    <p>
-      <%= lang === 'it' ? 'Endpoint base:' : 'Base endpoint:' %>
-      <code><%= siteUrl %>/api/v1/</code>
-    </p>
-    <ul class="doc-list">
-      <li><a href="/api/v1/health"><code>GET /api/v1/health</code></a> — <%= lang === 'it' ? 'stato del servizio' : 'service status' %></li>
-    </ul>
-    <p class="doc-note">
-      <%= lang === 'it'
-        ? 'Player, punteggi e classifiche arriveranno in una versione successiva.'
-        : 'Player registration, scores, and leaderboards will arrive in a later release.' %>
-    </p>
-  </section>
-
-  <section class="doc-block">
-    <h2><%= lang === 'it' ? 'Legale per progetto' : 'Legal by project' %></h2>
+    <h2><%= lang === 'it' ? 'Giochi' : 'Games' %></h2>
     <% for (const project of legalProjects) { %>
       <div class="doc-project">
         <h3><%= project.name %></h3>
         <ul class="doc-list">
+          <li>
+            <a href="/<%= lang %>/docs/<%= project.id %>">
+              <%= lang === 'it' ? 'Come si gioca' : 'How to play' %>
+            </a>
+          </li>
           <li>
             <a href="/<%= lang %>/docs/<%= project.id %>/terms">
               <%= lang === 'it' ? 'Termini di servizio' : 'Terms of Service' %>
@@ -41,6 +30,13 @@
               <%= lang === 'it' ? 'Informativa privacy' : 'Privacy Policy' %>
             </a>
           </li>
+          <% if (project.href) { %>
+            <li>
+              <a href="<%= project.href %>" rel="noreferrer" target="_blank">
+                <%= lang === 'it' ? 'Gioca' : 'Play' %> →
+              </a>
+            </li>
+          <% } %>
         </ul>
       </div>
     <% } %>
