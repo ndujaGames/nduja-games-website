@@ -48,18 +48,18 @@ export function brandName() {
 
 export const projects = [
   {
-    id: "midcoil",
-    name: "Midcoil",
+    id: "chromawell",
+    name: "Chromawell",
     tags: ["Game", "Puzzle", "Mobile"],
     description: {
-      en: "A rope pulled taut. Find the exact middle, then snap it. Miss, and the two ends tell you how far off you were.",
-      it: "Una fune tesa. Trova il mezzo esatto, poi spezzala. Se sbagli, le due estremità ti dicono quanto eri lontano.",
+      en: "Survive as long as you can — keep any single color stack from reaching the top, and don't run out of moves.",
+      it: "Sopravvivi il più a lungo possibile — evita che una singola pila raggiunga la cima, e non restare senza mosse.",
     },
-    href: process.env.MIDCOIL_URL || "https://midcoil.nduja.games",
-    image: "/img/midcoil.png",
+    href: process.env.CHROMAWELL_URL || "https://chromawell.nduja.games",
+    image: "/img/chromawell.png",
     imageAlt: {
-      en: "Midcoil rope coiled on a dotted grid",
-      it: "Fune Midcoil avvolta su una griglia di punti",
+      en: "Chromawell well and fusion board",
+      it: "Pozzo e tabellone Chromawell",
     },
     status: "beta",
   },
@@ -80,22 +80,6 @@ export const projects = [
     status: "beta",
   },
   {
-    id: "chromawell",
-    name: "Chromawell",
-    tags: ["Game", "Puzzle", "Mobile"],
-    description: {
-      en: "Survive as long as you can — keep any single color stack from reaching the top, and don't run out of moves.",
-      it: "Sopravvivi il più a lungo possibile — evita che una singola pila raggiunga la cima, e non restare senza mosse.",
-    },
-    href: process.env.CHROMAWELL_URL || "https://chromawell.nduja.games",
-    image: "/img/chromawell.png",
-    imageAlt: {
-      en: "Chromawell well and fusion board",
-      it: "Pozzo e tabellone Chromawell",
-    },
-    status: "beta",
-  },
-  {
     id: "chessrelay",
     name: "ChessRelay",
     tags: ["Game", "Puzzle", "Mobile"],
@@ -108,6 +92,22 @@ export const projects = [
     imageAlt: {
       en: "ChessRelay board with chess pieces",
       it: "Scacchiera ChessRelay con i pezzi",
+    },
+    status: "beta",
+  },
+  {
+    id: "midcoil",
+    name: "Midcoil",
+    tags: ["Game", "Puzzle", "Mobile"],
+    description: {
+      en: "A rope pulled taut. Find the exact middle, then snap it. Miss, and the two ends tell you how far off you were.",
+      it: "Una fune tesa. Trova il mezzo esatto, poi spezzala. Se sbagli, le due estremità ti dicono quanto eri lontano.",
+    },
+    href: process.env.MIDCOIL_URL || "https://midcoil.nduja.games",
+    image: "/img/midcoil.png",
+    imageAlt: {
+      en: "Midcoil rope coiled on a dotted grid",
+      it: "Fune Midcoil avvolta su una griglia di punti",
     },
     status: "beta",
   },

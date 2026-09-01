@@ -31,7 +31,16 @@ app.use(helmet(helmetOptions));
 app.set("view engine", "ejs");
 app.set("views", viewsDir);
 
-app.use(express.static(publicDir, { maxAge: config.isProduction ? "1d" : 0 }));
+app.use(
+  express.static(publicDir, {
+    maxAge: config.isProduction ? "1d" : 0,
+    setHeaders(res, filePath) {
+      if (filePath.endsWith(`${path.sep}sw.js`)) {
+        res.setHeader("Cache-Control", "no-cache");
+      }
+    },
+  }),
+);
 
 app.use((req, res, next) => {
   res.locals.siteUrl = config.siteUrl;
