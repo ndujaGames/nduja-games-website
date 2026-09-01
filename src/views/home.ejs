@@ -10,8 +10,7 @@
   </p>
 </section>
 
-<section class="projects" aria-labelledby="projects-title">
-  <h2 id="projects-title" class="section-title"><%= lang === 'it' ? 'Progetti' : 'Projects' %></h2>
+<section class="projects" aria-label="<%= lang === 'it' ? 'Giochi' : 'Games' %>">
   <ul class="project-grid">
     <% for (const project of projects) { %>
       <li class="project-card">
@@ -35,18 +34,6 @@
           </figure>
         <% } %>
         <p class="project-description"><%= project.description[lang] || project.description.en %></p>
-        <div class="project-card-foot">
-          <a class="project-link project-link-details" href="/<%= lang %>/docs/<%= project.id %>">
-            <%= lang === 'it' ? 'Dettagli' : 'Details' %>
-          </a>
-          <% if (project.href) { %>
-            <a class="project-link" href="<%= project.href %>" rel="noreferrer" target="_blank">
-              <%= lang === 'it' ? 'Gioca' : 'Play' %> →
-            </a>
-          <% } else { %>
-            <span class="project-soon"><%= lang === 'it' ? 'In arrivo' : 'Coming soon' %></span>
-          <% } %>
-        </div>
       </li>
     <% } %>
   </ul>
