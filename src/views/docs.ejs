@@ -5,29 +5,19 @@
   <h1><%= lang === 'it' ? 'Documentazione' : 'Documentation' %></h1>
   <p class="doc-lead">
     <%= lang === 'it'
-      ? 'Come si gioca e documenti legali dei progetti ndujaGames.'
-      : 'How to play and legal documents for ndujaGames projects.' %>
+      ? 'Come si gioca ai titoli ndujaGames.'
+      : 'How to play ndujaGames titles.' %>
   </p>
 
   <section class="doc-block">
     <h2><%= lang === 'it' ? 'Giochi' : 'Games' %></h2>
-    <% for (const project of legalProjects) { %>
+    <% for (const project of docProjects) { %>
       <div class="doc-project">
         <h3><%= project.name %></h3>
         <ul class="doc-list">
           <li>
             <a href="/<%= lang %>/docs/<%= project.id %>">
               <%= lang === 'it' ? 'Come si gioca' : 'How to play' %>
-            </a>
-          </li>
-          <li>
-            <a href="/<%= lang %>/docs/<%= project.id %>/terms">
-              <%= lang === 'it' ? 'Termini di servizio' : 'Terms of Service' %>
-            </a>
-          </li>
-          <li>
-            <a href="/<%= lang %>/docs/<%= project.id %>/privacy">
-              <%= lang === 'it' ? 'Informativa privacy' : 'Privacy Policy' %>
             </a>
           </li>
           <% if (project.href) { %>

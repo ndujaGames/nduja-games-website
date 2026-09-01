@@ -22,6 +22,7 @@ docker run --name nduja-games-website-local \
   -e VIRTUAL_PORT=9080 \
   -e SITE_HOST=nduja.games.local \
   -e SITE_URL=http://nduja.games.local \
+  -e MIDCOIL_URL=http://midcoil.nduja.games.local \
   -e ABDOKU_URL=http://abdoku.nduja.games.local \
   -e CHROMAWELL_URL=http://chromawell.nduja.games.local \
   -e CHESSRELAY_URL=http://chessrelay.nduja.games.local \

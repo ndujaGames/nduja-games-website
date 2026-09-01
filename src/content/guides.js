@@ -1,4 +1,54 @@
 const guidesByProject = {
+  midcoil: {
+    en: {
+      title: "Midcoil",
+      lead: "A rope pulled taut. You choose where it snaps.",
+      sections: [
+        {
+          heading: "The goal",
+          body: [
+            "Midcoil is a logic puzzle. A rope is coiled on a grid, from one edge to the other. You win by snapping it at the exact middle — the node that splits the path into two equal lengths.",
+          ],
+        },
+        {
+          heading: "How to play",
+          body: [
+            "Tap a node to place the marker. Swipe along the rope to move it if you need to. Tap again to snap.",
+          ],
+        },
+        {
+          heading: "If you miss",
+          body: [
+            "Both halves unroll at the same speed. The shorter side finishes first. The gap between the two sounds — or the red flashes at the top and bottom — tells you how far you were from the middle. Use that to aim the next cut.",
+          ],
+        },
+      ],
+    },
+    it: {
+      title: "Midcoil",
+      lead: "Una fune tesa. Tu scegli dove si spezza.",
+      sections: [
+        {
+          heading: "L’obiettivo",
+          body: [
+            "Midcoil è un puzzle di logica. Una fune è avvolta su una griglia, da un bordo all’altro. Vinci spezzandola esattamente al mezzo — il nodo che divide il percorso in due lunghezze uguali.",
+          ],
+        },
+        {
+          heading: "Come si gioca",
+          body: [
+            "Tocca un nodo per piazzare il marcatore. Scorri la fune per spostarlo, se ne hai bisogno. Tocca di nuovo per spezzare.",
+          ],
+        },
+        {
+          heading: "Se sbagli",
+          body: [
+            "Le due metà si srotolano alla stessa velocità. Il lato più corto finisce per primo. L’intervallo tra i due suoni — o i flash rossi in alto e in basso — ti dice quanto eri lontano dal mezzo. Usalo per mirare il taglio successivo.",
+          ],
+        },
+      ],
+    },
+  },
   abdoku: {
     en: {
       title: "ABdoku",

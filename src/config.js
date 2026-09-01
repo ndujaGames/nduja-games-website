@@ -15,8 +15,8 @@ const nodeEnv = process.env.NODE_ENV || "development";
 const isProduction = nodeEnv === "production";
 const siteHost = process.env.SITE_HOST || "nduja.games";
 
-/** Typographic apostrophe (U+2019), not ASCII straight quote. */
-export const siteMark = "\u2019";
+/** ASCII apostrophe, matching the mark used in the games. */
+export const siteMark = "'";
 
 export const config = {
   rootDir,
@@ -31,8 +31,6 @@ export const config = {
   trustProxy: process.env.TRUST_PROXY !== "false",
   /** Bumped via package.json version to bust CDN cache for static CSS. */
   assetVersion: process.env.ASSET_VERSION || pkg.version,
-  /** Public contact until @nduja.games mail is live. Legal entity: ndujaLabs (info@ndujalabs.com). */
-  contactEmail: process.env.CONTACT_EMAIL || "ndujagames@sullo.co",
   postgres: {
     enabled: process.env.POSTGRES_ENABLED === "true",
     host: process.env.POSTGRES_HOST || "localhost",
@@ -50,6 +48,22 @@ export function brandName() {
 
 export const projects = [
   {
+    id: "midcoil",
+    name: "Midcoil",
+    tags: ["Game", "Puzzle", "Mobile"],
+    description: {
+      en: "A rope pulled taut. Find the exact middle, then snap it. Miss, and the two ends tell you how far off you were.",
+      it: "Una fune tesa. Trova il mezzo esatto, poi spezzala. Se sbagli, le due estremità ti dicono quanto eri lontano.",
+    },
+    href: process.env.MIDCOIL_URL || "https://midcoil.nduja.games",
+    image: "/img/midcoil.png",
+    imageAlt: {
+      en: "Midcoil rope coiled on a dotted grid",
+      it: "Fune Midcoil avvolta su una griglia di punti",
+    },
+    status: "beta",
+  },
+  {
     id: "abdoku",
     name: "ABdoku",
     tags: ["Game", "Puzzle", "Mobile"],
@@ -60,8 +74,8 @@ export const projects = [
     href: process.env.ABDOKU_URL || "https://abdoku.nduja.games",
     image: "/img/abdoku.png",
     imageAlt: {
-      en: "ABdoku puzzle board on a phone screen",
-      it: "Schema ABdoku su schermo mobile",
+      en: "ABdoku puzzle grid with A and B letters",
+      it: "Schema ABdoku con lettere A e B",
     },
     status: "beta",
   },
@@ -76,8 +90,8 @@ export const projects = [
     href: process.env.CHROMAWELL_URL || "https://chromawell.nduja.games",
     image: "/img/chromawell.png",
     imageAlt: {
-      en: "Chromawell game board on a phone screen",
-      it: "Tabellone Chromawell su schermo mobile",
+      en: "Chromawell well and fusion board",
+      it: "Pozzo e tabellone Chromawell",
     },
     status: "beta",
   },
@@ -92,8 +106,8 @@ export const projects = [
     href: process.env.CHESSRELAY_URL || "https://chessrelay.nduja.games",
     image: "/img/chessrelay.png",
     imageAlt: {
-      en: "ChessRelay puzzle board on a phone screen",
-      it: "Scacchiera ChessRelay su schermo mobile",
+      en: "ChessRelay board with chess pieces",
+      it: "Scacchiera ChessRelay con i pezzi",
     },
     status: "beta",
   },

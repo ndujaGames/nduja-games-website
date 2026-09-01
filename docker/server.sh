@@ -24,6 +24,7 @@ docker run --name nduja-games-website \
   -e LETSENCRYPT_EMAIL=info@ndujalabs.com \
   -e SITE_HOST=nduja.games \
   -e SITE_URL=https://nduja.games \
+  -e MIDCOIL_URL=https://midcoil.nduja.games \
   -e ABDOKU_URL=https://abdoku.nduja.games \
   -e CHROMAWELL_URL=https://chromawell.nduja.games \
   -e CHESSRELAY_URL=https://chessrelay.nduja.games \

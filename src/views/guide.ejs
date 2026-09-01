@@ -36,16 +36,6 @@
       <% } %>
     </section>
   <% } %>
-
-  <nav class="guide-also" aria-label="<%= lang === 'it' ? 'Altri documenti' : 'Other documents' %>">
-    <a href="/<%= lang %>/docs/<%= projectId %>/terms">
-      <%= lang === 'it' ? 'Termini di servizio' : 'Terms of Service' %>
-    </a>
-    <span aria-hidden="true"> · </span>
-    <a href="/<%= lang %>/docs/<%= projectId %>/privacy">
-      <%= lang === 'it' ? 'Informativa privacy' : 'Privacy Policy' %>
-    </a>
-  </nav>
 </article>
 
 <%- include('partials/footer') %>

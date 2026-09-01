@@ -15,19 +15,6 @@
   <ul class="project-grid">
     <% for (const project of projects) { %>
       <li class="project-card">
-        <div class="project-card-layout">
-        <% if (project.image) { %>
-          <div class="project-shot-wrap">
-            <% if (project.href) { %>
-              <a href="<%= project.href %>" rel="noreferrer" target="_blank" tabindex="-1" aria-hidden="true">
-                <img class="project-shot" src="<%= project.image %>" alt="<%= project.imageAlt?.[lang] || project.imageAlt?.en || project.name %>" width="390" height="844" loading="lazy" />
-              </a>
-            <% } else { %>
-              <img class="project-shot" src="<%= project.image %>" alt="<%= project.imageAlt?.[lang] || project.imageAlt?.en || project.name %>" width="390" height="844" loading="lazy" />
-            <% } %>
-          </div>
-        <% } %>
-        <div class="project-card-body">
         <div class="project-card-head">
           <h3><%= project.name %></h3>
           <% if (project.status === 'beta') { %>
@@ -36,17 +23,29 @@
             <span class="badge badge-live">Live</span>
           <% } %>
         </div>
+        <% if (project.image) { %>
+          <figure class="project-shot-wrap">
+            <% if (project.href) { %>
+              <a href="<%= project.href %>" rel="noreferrer" target="_blank">
+                <img class="project-shot" src="<%= project.image %>?v=<%= assetVersion %>" alt="<%= project.imageAlt?.[lang] || project.imageAlt?.en || project.name %>" loading="lazy" />
+              </a>
+            <% } else { %>
+              <img class="project-shot" src="<%= project.image %>?v=<%= assetVersion %>" alt="<%= project.imageAlt?.[lang] || project.imageAlt?.en || project.name %>" loading="lazy" />
+            <% } %>
+          </figure>
+        <% } %>
         <p class="project-description"><%= project.description[lang] || project.description.en %></p>
         <div class="project-card-foot">
+          <a class="project-link project-link-details" href="/<%= lang %>/docs/<%= project.id %>">
+            <%= lang === 'it' ? 'Dettagli' : 'Details' %>
+          </a>
           <% if (project.href) { %>
             <a class="project-link" href="<%= project.href %>" rel="noreferrer" target="_blank">
-              <%= lang === 'it' ? 'Visita' : 'Visit' %> →
+              <%= lang === 'it' ? 'Gioca' : 'Play' %> →
             </a>
           <% } else { %>
             <span class="project-soon"><%= lang === 'it' ? 'In arrivo' : 'Coming soon' %></span>
           <% } %>
-        </div>
-        </div>
         </div>
       </li>
     <% } %>

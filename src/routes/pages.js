@@ -1,7 +1,6 @@
 import { Router } from "express";
 import { config, projects, brandName } from "../config.js";
 import { getGuide } from "../content/guides.js";
-import { getLegalDoc, legalCatalog, legalKinds } from "../content/legal.js";
 import { preferredLang, resolveLang, pathWithLang } from "../lang.js";
 
 const router = Router();
@@ -27,38 +26,24 @@ function notFound(req, res, lang) {
 }
 
 function docsProjects() {
-  const byId = new Map(projects.map((p) => [p.id, p]));
-  return legalCatalog().map((legal) => ({
-    id: legal.id,
-    name: legal.name,
-    href: byId.get(legal.id)?.href ?? null,
-  }));
+  return projects
+    .filter((project) => getGuide(project.id, "en"))
+    .map((project) => ({
+      id: project.id,
+      name: project.name,
+      href: project.href ?? null,
+    }));
 }
 
 function renderGuide(req, res, { projectId, lang }) {
   const doc = getGuide(projectId, lang);
   if (!doc) return notFound(req, res, lang);
   const project = projects.find((p) => p.id === projectId);
-  const catalog = legalCatalog().find((p) => p.id === projectId);
   return res.render("guide", pageLocals(req, {
     doc,
     projectId,
-    projectName: catalog?.name ?? project?.name ?? projectId,
-    playHref: project?.href ?? null,
-    title: doc.title,
-    lang,
-  }));
-}
-
-function renderLegal(req, res, { projectId, kind, lang }) {
-  const doc = getLegalDoc(projectId, kind, lang);
-  if (!doc) return notFound(req, res, lang);
-  const project = legalCatalog().find((p) => p.id === projectId);
-  return res.render("legal", pageLocals(req, {
-    doc,
-    projectId,
     projectName: project?.name ?? projectId,
-    kind,
+    playHref: project?.href ?? null,
     title: doc.title,
     lang,
   }));
@@ -67,7 +52,7 @@ function renderLegal(req, res, { projectId, kind, lang }) {
 function renderDocsIndex(req, res, lang) {
   return res.render("docs", pageLocals(req, {
     title: lang === "it" ? "Documentazione" : "Documentation",
-    legalProjects: docsProjects(),
+    docProjects: docsProjects(),
     lang,
   }));
 }
@@ -87,11 +72,6 @@ for (const lang of ["en", "it"]) {
   router.get(`/${lang}/docs`, (req, res) => renderDocsIndex(req, res, lang));
   router.get(`/${lang}/docs/:project`, (req, res) => {
     return renderGuide(req, res, { projectId: req.params.project, lang });
-  });
-  router.get(`/${lang}/docs/:project/:kind`, (req, res) => {
-    const { project, kind } = req.params;
-    if (!legalKinds.includes(kind)) return notFound(req, res, lang);
-    return renderLegal(req, res, { projectId: project, kind, lang });
   });
 }
 
