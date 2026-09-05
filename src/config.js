@@ -111,20 +111,21 @@ export const projects = [
     },
     status: "beta",
   },
-  {
-    id: "hexact",
-    name: "Hexact",
-    tags: ["Game", "Puzzle", "Mobile"],
-    description: {
-      en: "Walk the whole board, number by number, until only one hex is left.",
-      it: "Percorri l’intero tabellone, numero per numero, fino a lasciarne uno solo.",
-    },
-    href: process.env.HEXACT_URL || "https://hexact.nduja.games",
-    image: "/img/hexact.png",
-    imageAlt: {
-      en: "Hexact hexagonal board with numbered tiles",
-      it: "Tabellone esagonale Hexact con tessere numerate",
-    },
-    status: "beta",
-  },
+  // Unpublished until Easy/Beginner puzzles are tuned.
+  // {
+  //   id: "hexact",
+  //   name: "Hexact",
+  //   tags: ["Game", "Puzzle", "Mobile"],
+  //   description: {
+  //     en: "Walk the whole board, number by number, until only one hex is left.",
+  //     it: "Percorri l’intero tabellone, numero per numero, fino a lasciarne uno solo.",
+  //   },
+  //   href: process.env.HEXACT_URL || "https://hexact.nduja.games",
+  //   image: "/img/hexact.png",
+  //   imageAlt: {
+  //     en: "Hexact hexagonal board with numbered tiles",
+  //     it: "Tabellone esagonale Hexact con tessere numerate",
+  //   },
+  //   status: "beta",
+  // },
 ];

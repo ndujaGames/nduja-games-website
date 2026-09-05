@@ -36,9 +36,9 @@ function docsProjects() {
 }
 
 function renderGuide(req, res, { projectId, lang }) {
-  const doc = getGuide(projectId, lang);
-  if (!doc) return notFound(req, res, lang);
   const project = projects.find((p) => p.id === projectId);
+  const doc = getGuide(projectId, lang);
+  if (!project || !doc) return notFound(req, res, lang);
   return res.render("guide", pageLocals(req, {
     doc,
     projectId,
