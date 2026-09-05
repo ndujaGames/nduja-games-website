@@ -9,6 +9,7 @@ Site, documentation, and API for **ndujaGames** at [nduja.games](https://nduja.g
 | `abdoku.nduja.games` | ABdoku web app |
 | `chromawell.nduja.games` | Chromawell web app |
 | `chessrelay.nduja.games` | ChessRelay web app |
+| `hexact.nduja.games` | Hexact web app |
 
 ## Routes
 
@@ -48,7 +49,7 @@ Expects nginx-proxy + Let's Encrypt companion on the host.
 Add to `/etc/hosts` (point at your dev machine):
 
 ```
-127.0.0.1 nduja.games.local midcoil.nduja.games.local abdoku.nduja.games.local chromawell.nduja.games.local chessrelay.nduja.games.local
+127.0.0.1 nduja.games.local midcoil.nduja.games.local abdoku.nduja.games.local chromawell.nduja.games.local chessrelay.nduja.games.local hexact.nduja.games.local
 ```
 
 Then:
@@ -58,6 +59,7 @@ Then:
 ../midcoil/docker/local.sh
 ../abdoku/docker/local.sh
 ../chromawell/docker/local.sh
+../hexact/docker/local.sh
 ```
 
 Optional overrides in `.env.local`.

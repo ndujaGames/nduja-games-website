@@ -111,4 +111,20 @@ export const projects = [
     },
     status: "beta",
   },
+  {
+    id: "hexact",
+    name: "Hexact",
+    tags: ["Game", "Puzzle", "Mobile"],
+    description: {
+      en: "Cover the board. Exactly n steps — walk through open sides, jump same color from a star, land on a different color.",
+      it: "Copri il tabellone. Esattamente n passi — cammina dai lati aperti, salta dallo stesso colore da una stella, atterra su un colore diverso.",
+    },
+    href: process.env.HEXACT_URL || "https://hexact.nduja.games",
+    image: "/img/hexact.png",
+    imageAlt: {
+      en: "Hexact hexagonal board with numbered tiles",
+      it: "Tabellone esagonale Hexact con tessere numerate",
+    },
+    status: "beta",
+  },
 ];

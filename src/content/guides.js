@@ -227,6 +227,62 @@ const guidesByProject = {
       ],
     },
   },
+  hexact: {
+    en: {
+      title: "Hexact",
+      lead: "Cover the board. Exactly n steps.",
+      sections: [
+        {
+          heading: "The goal",
+          body: [
+            "Hexact is a covering puzzle on a nest of 19 hexes. You choose where to start. Each move darkens the hex you leave and every hex you pass through. You win when one live hex remains — the one you stand on.",
+          ],
+        },
+        {
+          heading: "How a move works",
+          body: ["A move has as many steps as the number you start from."],
+          list: [
+            "A step goes through an open side to a neighboring live hex.",
+            "From a star, you can also jump to another live hex of the same color.",
+            "The last step must land on a different color than you started on.",
+          ],
+        },
+        {
+          heading: "Zeros",
+          body: [
+            "A 0 cannot start a move. You can step through it, and you may finish on it only when it is the last hex left.",
+          ],
+        },
+      ],
+    },
+    it: {
+      title: "Hexact",
+      lead: "Copri il tabellone. Esattamente n passi.",
+      sections: [
+        {
+          heading: "L’obiettivo",
+          body: [
+            "Hexact è un puzzle di copertura su un nido di 19 esagoni. Scegli tu da dove partire. Ogni mossa spegne l’esagono che lasci e quelli che attraversi. Vinci quando resta un solo esagono vivo — quello su cui stai.",
+          ],
+        },
+        {
+          heading: "Come funziona una mossa",
+          body: ["Ogni mossa ha tanti passi quanti il numero da cui parti."],
+          list: [
+            "Un passo passa da un lato aperto a un esagono vivo vicino.",
+            "Da una stella puoi anche saltare su un altro esagono vivo dello stesso colore.",
+            "L’ultimo passo deve arrivare su un colore diverso da quello di partenza.",
+          ],
+        },
+        {
+          heading: "Gli zeri",
+          body: [
+            "Da uno 0 non si parte. Puoi attraversarlo, e puoi chiuderci solo quando è l’ultimo esagono rimasto.",
+          ],
+        },
+      ],
+    },
+  },
 };
 
 export function getGuide(projectId, lang) {
