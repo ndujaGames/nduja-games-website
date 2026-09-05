@@ -116,8 +116,8 @@ export const projects = [
     name: "Hexact",
     tags: ["Game", "Puzzle", "Mobile"],
     description: {
-      en: "Cover the board. Exactly n steps — walk through open sides, jump same color from a star, land on a different color.",
-      it: "Copri il tabellone. Esattamente n passi — cammina dai lati aperti, salta dallo stesso colore da una stella, atterra su un colore diverso.",
+      en: "Walk the whole board, number by number, until only one hex is left.",
+      it: "Percorri l’intero tabellone, numero per numero, fino a lasciarne uno solo.",
     },
     href: process.env.HEXACT_URL || "https://hexact.nduja.games",
     image: "/img/hexact.png",
