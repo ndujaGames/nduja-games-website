@@ -325,6 +325,21 @@ code {
   text-decoration: underline;
 }
 
+.footer-icon {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: -0.15em;
+}
+
+.footer-icon svg {
+  display: block;
+}
+
+.footer-icon:hover,
+.footer-icon:focus-visible {
+  text-decoration: none;
+}
+
 @media (min-width: 720px) {
   .project-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
