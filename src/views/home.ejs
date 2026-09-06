@@ -2,7 +2,9 @@
 <%- include('partials/header') %>
 
 <section class="hero">
-  <h1 class="hero-title"><span class="hero-mark"><%= siteMark %></span><%= siteName %></h1>
+  <h1 class="hero-title">
+    <span class="hero-name"><%= siteMark %><%= siteName %></span><img class="hero-logo" src="/favicon.svg?v=<%= assetVersion %>" alt="" width="72" height="72" />
+  </h1>
   <p class="hero-lead">
     <%= lang === 'it'
       ? 'Giochi pensati per il web e per mobile — gioca offline, con funzioni online\u00a0opzionali.'

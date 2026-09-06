@@ -55,6 +55,9 @@ a:hover {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
   font-family: "Nunito", system-ui, sans-serif;
   font-size: 1.35rem;
   font-weight: 800;
@@ -62,9 +65,11 @@ a:hover {
   text-decoration: none;
 }
 
-.brand-mark {
-  font-family: inherit;
-  font-weight: inherit;
+.brand-logo {
+  display: block;
+  width: 1.35em;
+  height: 1.35em;
+  flex-shrink: 0;
 }
 
 .site-nav {
@@ -126,6 +131,10 @@ a:hover {
 }
 
 .hero-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.22em;
   margin: 0;
   font-family: "Nunito", system-ui, sans-serif;
   font-size: clamp(2.6rem, 10vw, 4.2rem);
@@ -134,9 +143,11 @@ a:hover {
   letter-spacing: -0.02em;
 }
 
-.hero-mark {
-  font-family: inherit;
-  font-weight: inherit;
+.hero-logo {
+  display: block;
+  width: 0.82em;
+  height: 0.82em;
+  flex-shrink: 0;
 }
 
 .hero-lead {

@@ -3,7 +3,7 @@
 <% } %>
 <header class="site-header">
   <a class="brand" href="/<%= lang %>/">
-    <span class="brand-mark"><%= siteMark %></span><%= siteName %>
+    <span class="brand-name"><%= siteMark %><%= siteName %></span><img class="brand-logo" src="/favicon.svg?v=<%= assetVersion %>" alt="" width="32" height="32" />
   </a>
   <div class="lang-switch" role="group" aria-label="<%= lang === 'it' ? 'Lingua' : 'Language' %>">
     <a href="<%= langPath('en') %>" class="lang-btn<%= lang === 'en' ? ' is-on' : '' %>" lang="en" hreflang="en" aria-current="<%= lang === 'en' ? 'true' : 'false' %>">EN</a>

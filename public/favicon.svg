@@ -1,68 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="ndujaGames">
-  <rect width="128" height="128" rx="28" fill="#000000"/>
-  <text
-    x="64"
-    y="44"
-    text-anchor="middle"
-    font-family="Nunito, ui-rounded, system-ui, sans-serif"
-    font-size="34"
-    font-weight="800"
-    fill="#ffffff"
-  >&#8217;nG</text>
-  <g aria-hidden="true">
-    <!-- 3 x 8 spectrum (hex: favicon renderers often ignore hsl()) -->
-    <!-- row 0 -->
-    <rect x="5" y="56" width="13" height="13" rx="2.5" fill="#eb3333"/>
-    <rect x="20" y="56" width="13" height="13" rx="2.5" fill="#ebd433"/>
-    <rect x="35" y="56" width="13" height="13" rx="2.5" fill="#61eb33"/>
-    <rect x="50" y="56" width="13" height="13" rx="2.5" fill="#33eba6"/>
-    <rect x="65" y="56" width="13" height="13" rx="2.5" fill="#338feb"/>
-    <rect x="80" y="56" width="13" height="13" rx="2.5" fill="#6152eb"/>
-    <rect x="95" y="56" width="13" height="13" rx="2.5" fill="#8333eb"/>
-    <rect x="110" y="56" width="13" height="13" rx="2.5" fill="#eb33a6"/>
-    <!-- row 1 -->
-    <rect x="5" y="71" width="13" height="13" rx="2.5" fill="#eb3333"/>
-    <rect x="20" y="71" width="13" height="13" rx="2.5" fill="#ebd433"/>
-    <rect x="35" y="71" width="13" height="13" rx="2.5" fill="#61eb33"/>
-    <rect x="50" y="71" width="13" height="13" rx="2.5" fill="#33eba6"/>
-    <rect x="65" y="71" width="13" height="13" rx="2.5" fill="#338feb"/>
-    <rect x="80" y="71" width="13" height="13" rx="2.5" fill="#6152eb"/>
-    <rect x="95" y="71" width="13" height="13" rx="2.5" fill="#8333eb"/>
-    <rect x="110" y="71" width="13" height="13" rx="2.5" fill="#eb33a6"/>
-    <!-- row 2 -->
-    <rect x="5" y="86" width="13" height="13" rx="2.5" fill="#eb3333"/>
-    <rect x="20" y="86" width="13" height="13" rx="2.5" fill="#ebd433"/>
-    <rect x="35" y="86" width="13" height="13" rx="2.5" fill="#61eb33"/>
-    <rect x="50" y="86" width="13" height="13" rx="2.5" fill="#33eba6"/>
-    <rect x="65" y="86" width="13" height="13" rx="2.5" fill="#338feb"/>
-    <rect x="80" y="86" width="13" height="13" rx="2.5" fill="#6152eb"/>
-    <rect x="95" y="86" width="13" height="13" rx="2.5" fill="#8333eb"/>
-    <rect x="110" y="86" width="13" height="13" rx="2.5" fill="#eb33a6"/>
-    <g fill="#ffffff" opacity="0.2">
-      <rect x="5" y="56" width="13" height="5" rx="2.5"/>
-      <rect x="20" y="56" width="13" height="5" rx="2.5"/>
-      <rect x="35" y="56" width="13" height="5" rx="2.5"/>
-      <rect x="50" y="56" width="13" height="5" rx="2.5"/>
-      <rect x="65" y="56" width="13" height="5" rx="2.5"/>
-      <rect x="80" y="56" width="13" height="5" rx="2.5"/>
-      <rect x="95" y="56" width="13" height="5" rx="2.5"/>
-      <rect x="110" y="56" width="13" height="5" rx="2.5"/>
-      <rect x="5" y="71" width="13" height="5" rx="2.5"/>
-      <rect x="20" y="71" width="13" height="5" rx="2.5"/>
-      <rect x="35" y="71" width="13" height="5" rx="2.5"/>
-      <rect x="50" y="71" width="13" height="5" rx="2.5"/>
-      <rect x="65" y="71" width="13" height="5" rx="2.5"/>
-      <rect x="80" y="71" width="13" height="5" rx="2.5"/>
-      <rect x="95" y="71" width="13" height="5" rx="2.5"/>
-      <rect x="110" y="71" width="13" height="5" rx="2.5"/>
-      <rect x="5" y="86" width="13" height="5" rx="2.5"/>
-      <rect x="20" y="86" width="13" height="5" rx="2.5"/>
-      <rect x="35" y="86" width="13" height="5" rx="2.5"/>
-      <rect x="50" y="86" width="13" height="5" rx="2.5"/>
-      <rect x="65" y="86" width="13" height="5" rx="2.5"/>
-      <rect x="80" y="86" width="13" height="5" rx="2.5"/>
-      <rect x="95" y="86" width="13" height="5" rx="2.5"/>
-      <rect x="110" y="86" width="13" height="5" rx="2.5"/>
-    </g>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84.40 84.40" role="img" aria-label="ndujaGames">
+  <polygon fill="#ca6a40" points="42.20,42.20 77.01,22.10 77.01,62.30" />
+  <polygon fill="#d6754b" points="42.20,42.20 77.01,62.30 42.20,82.40" />
+  <polygon fill="#ca6a40" points="42.20,42.20 42.20,82.40 7.39,62.30" />
+  <polygon fill="#d6754b" points="42.20,42.20 7.39,62.30 7.39,22.10" />
+  <polygon fill="#ca6a40" points="42.20,42.20 7.39,22.10 42.20,2.00" />
+  <polygon fill="#d6754b" points="42.20,42.20 42.20,2.00 77.01,22.10" />
+  <polygon fill="#0a0a0a" points="42.20,26.40 45.34,34.62 53.37,31.03 49.78,39.06 58.00,42.20 49.78,45.34 53.37,53.37 45.34,49.78 42.20,58.00 39.06,49.78 31.03,53.37 34.62,45.34 26.40,42.20 34.62,39.06 31.03,31.03 39.06,34.62" />
 </svg>
