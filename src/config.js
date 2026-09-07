@@ -29,6 +29,10 @@ export const config = {
   siteUrl: process.env.SITE_URL || `https://${siteHost}`,
   isBeta: process.env.SITE_BETA !== "false",
   trustProxy: process.env.TRUST_PROXY !== "false",
+  /** Display / compare version; independent of asset cache-bust override. */
+  appVersion: pkg.version,
+  /** Increment when a deploy must ask open tabs to reload. */
+  appReload: 1,
   /** Bumped via package.json version to bust CDN cache for static CSS. */
   assetVersion: process.env.ASSET_VERSION || pkg.version,
   postgres: {

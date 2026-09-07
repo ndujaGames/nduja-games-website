@@ -20,6 +20,9 @@
   <p class="site-footer-line">
     © <%= year %> <span class="brand-mark"><%= siteMark %></span><%= siteName %>
     <span class="footer-sep" aria-hidden="true">|</span>
+    <span class="footer-version">v<%= appVersion %></span>
+    <button type="button" class="footer-text-btn" id="site-version-update" hidden></button>
+    <span class="footer-sep" aria-hidden="true">|</span>
     <a href="/<%= lang %>/terms"><%= lang === 'it' ? 'Termini' : 'Terms' %></a>
     <span class="footer-sep" aria-hidden="true">|</span>
     <a href="/<%= lang %>/privacy"><%= lang === 'it' ? 'Privacy' : 'Privacy' %></a>
@@ -46,6 +49,18 @@
     <button type="button" class="cookie-consent-accept" data-cookie="granted"><%= lang === 'it' ? 'Accetta' : 'Accept' %></button>
   </div>
 </dialog>
+<aside id="app-update" class="app-update" hidden>
+  <p class="app-update-title"><%= lang === 'it' ? 'Nuova versione' : 'New version' %></p>
+  <p class="app-update-body">
+    <%= lang === 'it'
+      ? 'C\'è un aggiornamento importante. Ricarica la pagina.'
+      : 'There\'s an important update. Reload the page.' %>
+  </p>
+  <div class="app-update-actions">
+    <button type="button" class="app-update-reload" id="app-update-reload"><%= lang === 'it' ? 'Ricarica' : 'Reload' %></button>
+  </div>
+</aside>
 <script src="/js/consent.js?v=<%= assetVersion %>-ui"></script>
+<script src="/js/version-check.js?v=<%= assetVersion %>-ui"></script>
 </body>
 </html>

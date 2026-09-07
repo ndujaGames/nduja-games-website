@@ -56,6 +56,11 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/version.json", (_req, res) => {
+  res.set("Cache-Control", "no-store");
+  res.json({ version: config.appVersion, reload: config.appReload });
+});
+
 app.use(
   express.static(publicDir, {
     etag: true,
@@ -74,6 +79,8 @@ app.use((req, res, next) => {
   res.locals.brandName = brandName();
   res.locals.isBeta = config.isBeta;
   res.locals.assetVersion = config.assetVersion;
+  res.locals.appVersion = config.appVersion;
+  res.locals.appReload = config.appReload;
   res.locals.year = new Date().getFullYear();
   next();
 });
