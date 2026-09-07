@@ -1,4 +1,6 @@
-:root {
+:root,
+html[data-theme="day"] {
+  color-scheme: light;
   --paper: #f3eee6;
   --paper-2: #ebe4d9;
   --ink: #1c1612;
@@ -8,6 +10,27 @@
   --card: rgba(255, 255, 255, 0.55);
   --beta: #3d2a14;
   --beta-ink: #f8ead0;
+  --stripe: rgba(0, 0, 0, 0.04);
+  --badge: rgba(128, 32, 80, 0.08);
+  --code-bg: rgba(0, 0, 0, 0.05);
+  --page-art: url("/img/background.jpg");
+}
+
+html[data-theme="night"] {
+  color-scheme: dark;
+  --paper: #2a2a2e;
+  --paper-2: #35353b;
+  --ink: #eceae4;
+  --ink-soft: #a8a6a0;
+  --accent: #e090b0;
+  --line: rgba(255, 255, 255, 0.14);
+  --card: rgba(255, 255, 255, 0.06);
+  --beta: #1c1c20;
+  --beta-ink: #f8ead0;
+  --stripe: rgba(255, 255, 255, 0.04);
+  --badge: rgba(224, 144, 176, 0.14);
+  --code-bg: rgba(255, 255, 255, 0.08);
+  --page-art: url("/img/background-night.jpg");
 }
 
 * {
@@ -19,10 +42,11 @@ body {
   min-height: 100vh;
   font-family: "Nunito", system-ui, sans-serif;
   color: var(--ink);
-  background:
-    linear-gradient(90deg, transparent 95%, rgba(0, 0, 0, 0.04) 100%),
-    var(--paper);
-  background-size: 10px 100%;
+  background-color: var(--paper);
+  background-image: var(--page-art);
+  background-repeat: repeat-y;
+  background-position: top center;
+  background-size: 100% auto;
   line-height: 1.55;
 }
 
@@ -66,10 +90,26 @@ a:hover {
 }
 
 .brand-logo {
-  display: block;
-  width: 1.35em;
-  height: 1.35em;
+  height: 1.55em;
+  width: auto;
+  max-width: min(240px, 48vw);
   flex-shrink: 0;
+}
+
+.brand-logo-day {
+  display: block;
+}
+
+.brand-logo-night {
+  display: none;
+}
+
+html[data-theme="night"] .brand-logo-day {
+  display: none;
+}
+
+html[data-theme="night"] .brand-logo-night {
+  display: block;
 }
 
 .site-nav {
@@ -91,6 +131,42 @@ a:hover {
   margin-left: auto;
 }
 
+.theme-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.theme-btn:hover,
+.theme-btn:focus-visible {
+  color: var(--ink);
+  border-color: var(--ink-soft);
+}
+
+.theme-btn svg {
+  display: block;
+}
+
+.theme-btn .theme-icon-sun {
+  display: none;
+}
+
+html[data-theme="night"] .theme-btn .theme-icon-sun {
+  display: block;
+}
+
+html[data-theme="night"] .theme-btn .theme-icon-moon {
+  display: none;
+}
+
 .lang-switch {
   display: flex;
   gap: 4px;
@@ -104,7 +180,7 @@ a:hover {
   padding: 6px 10px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: transparent;
+  background: var(--paper);
   color: var(--ink-soft);
   font: inherit;
   font-size: 0.72rem;
@@ -144,10 +220,24 @@ a:hover {
 }
 
 .hero-logo {
+  width: min(100%, 42rem);
+  height: auto;
+}
+
+.hero-logo-day {
   display: block;
-  width: 0.82em;
-  height: 0.82em;
-  flex-shrink: 0;
+}
+
+.hero-logo-night {
+  display: none;
+}
+
+html[data-theme="night"] .hero-logo-day {
+  display: none;
+}
+
+html[data-theme="night"] .hero-logo-night {
+  display: block;
 }
 
 .hero-lead {
@@ -224,7 +314,7 @@ a:hover {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--accent);
-  background: rgba(128, 32, 80, 0.08);
+  background: var(--badge);
   border-radius: 999px;
   padding: 3px 8px;
 }
@@ -301,7 +391,7 @@ a:hover {
 code {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.9em;
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--code-bg);
   border-radius: 6px;
   padding: 2px 6px;
 }
@@ -381,9 +471,8 @@ code {
     min-width: 0;
   }
 
-  .lang-switch {
+  .site-header-end {
     flex-shrink: 0;
-    margin-left: auto;
   }
 
   .site-main {

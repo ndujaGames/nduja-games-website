@@ -34,11 +34,6 @@ app.set("views", viewsDir);
 app.use(
   express.static(publicDir, {
     maxAge: config.isProduction ? "1d" : 0,
-    setHeaders(res, filePath) {
-      if (filePath.endsWith(`${path.sep}sw.js`)) {
-        res.setHeader("Cache-Control", "no-cache");
-      }
-    },
   }),
 );
 
