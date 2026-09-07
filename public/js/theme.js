@@ -1,5 +1,29 @@
 const STORAGE = "nduja-theme";
 const COOKIES = "nduja-cookies";
+const GA_ID = "G-8EBCHLNHFM";
+const GA_DOMAINS = [
+  "nduja.games",
+  "chromawell.nduja.games",
+  "abdoku.nduja.games",
+  "chessrelay.nduja.games",
+  "midcoil.nduja.games",
+  "hexact.nduja.games",
+];
+
+function isLiveSite() {
+  const host = location.hostname;
+  if (
+    host === "localhost" ||
+    host === "127.0.0.1" ||
+    host === "[::1]" ||
+    host.endsWith(".local") ||
+    host.endsWith(".localhost")
+  ) {
+    return false;
+  }
+  if (/^(10\.|192\.168\.|172\.(1[6-9]|2\d|3[01])\.)/.test(host)) return false;
+  return host === "nduja.games" || host === "www.nduja.games";
+}
 
 function storedTheme() {
   try {
@@ -45,13 +69,33 @@ function savedCookies() {
   return null;
 }
 
+let gaLoaded = false;
+
+function loadGa() {
+  if (!isLiveSite() || gaLoaded || savedCookies() !== "yes") return;
+  gaLoaded = true;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () {
+    window.dataLayer.push(arguments);
+  };
+  window.gtag("js", new Date());
+  window.gtag("config", GA_ID, { linker: { domains: GA_DOMAINS } });
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+  document.head.appendChild(script);
+}
+
 function saveCookies(value) {
+  const prev = savedCookies();
   try {
     localStorage.setItem(COOKIES, value);
   } catch {
     // ignore
   }
   closeCookies();
+  if (value === "yes") loadGa();
+  else if (prev === "yes") location.reload();
 }
 
 applyTheme(storedTheme());
@@ -72,4 +116,5 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("cookie-no")?.addEventListener("click", () => saveCookies("no"));
   document.getElementById("cookie-yes")?.addEventListener("click", () => saveCookies("yes"));
   if (!savedCookies()) openCookies();
+  else loadGa();
 });
