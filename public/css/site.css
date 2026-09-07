@@ -298,6 +298,7 @@ html[data-theme="night"] .hero-logo-night {
 
 .project-card h3 {
   margin: 0;
+  text-align: center;
 }
 
 .project-description {

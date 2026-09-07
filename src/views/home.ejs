@@ -11,14 +11,7 @@
   <ul class="project-grid">
     <% for (const project of projects) { %>
       <li class="project-card">
-        <div class="project-card-head">
           <h3><%= project.name %></h3>
-          <% if (project.status === 'beta') { %>
-            <span class="badge">Beta</span>
-          <% } else if (project.status === 'live') { %>
-            <span class="badge badge-live">Live</span>
-          <% } %>
-        </div>
         <% if (project.image) { %>
           <figure class="project-shot-wrap">
             <% if (project.href) { %>
