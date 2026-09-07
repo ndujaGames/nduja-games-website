@@ -31,9 +31,20 @@ app.use(helmet(helmetOptions));
 app.set("view engine", "ejs");
 app.set("views", viewsDir);
 
+app.use((req, res, next) => {
+  res.set("Cache-Control", "max-age=0, no-cache, must-revalidate");
+  res.set("Pragma", "no-cache");
+  next();
+});
+
 app.use(
   express.static(publicDir, {
-    maxAge: config.isProduction ? "1d" : 0,
+    etag: true,
+    lastModified: true,
+    setHeaders(res) {
+      res.set("Cache-Control", "max-age=0, no-cache, must-revalidate");
+      res.set("Pragma", "no-cache");
+    },
   }),
 );
 
