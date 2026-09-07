@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { config, projects, brandName } from "../config.js";
 import { getGuide } from "../content/guides.js";
+import { getLegalDoc } from "../content/legal.js";
 import { preferredLang, resolveLang, pathWithLang } from "../lang.js";
 
 const router = Router();
@@ -72,6 +73,22 @@ for (const lang of ["en", "it"]) {
   router.get(`/${lang}/docs`, (req, res) => renderDocsIndex(req, res, lang));
   router.get(`/${lang}/docs/:project`, (req, res) => {
     return renderGuide(req, res, { projectId: req.params.project, lang });
+  });
+  router.get(`/${lang}/privacy`, (req, res) => {
+    return res.render("legal", pageLocals(req, {
+      doc: getLegalDoc("privacy", lang),
+      title: lang === "it" ? "Privacy" : "Privacy",
+      path: `/${lang}/privacy`,
+      lang,
+    }));
+  });
+  router.get(`/${lang}/terms`, (req, res) => {
+    return res.render("legal", pageLocals(req, {
+      doc: getLegalDoc("terms", lang),
+      title: lang === "it" ? "Termini" : "Terms",
+      path: `/${lang}/terms`,
+      lang,
+    }));
   });
 }
 

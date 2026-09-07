@@ -20,6 +20,12 @@
   <p class="site-footer-line">
     © <%= year %> <span class="brand-mark"><%= siteMark %></span><%= siteName %>
     <span class="footer-sep" aria-hidden="true">|</span>
+    <a href="/<%= lang %>/terms"><%= lang === 'it' ? 'Termini' : 'Terms' %></a>
+    <span class="footer-sep" aria-hidden="true">|</span>
+    <a href="/<%= lang %>/privacy"><%= lang === 'it' ? 'Privacy' : 'Privacy' %></a>
+    <span class="footer-sep" aria-hidden="true">|</span>
+    <button type="button" class="footer-text-btn" id="cookie-settings"><%= lang === 'it' ? 'Cookie' : 'Cookies' %></button>
+    <span class="footer-sep" aria-hidden="true">|</span>
     <a class="footer-icon" href="https://x.com/ndujagames" rel="noreferrer" target="_blank" aria-label="X">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
         <path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.72-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/>
@@ -27,5 +33,18 @@
     </a>
   </p>
 </footer>
+<aside id="cookie-consent" class="cookie-consent" hidden>
+  <p class="cookie-consent-title"><%= lang === 'it' ? 'Cookie' : 'Cookies' %></p>
+  <p class="cookie-consent-body">
+    <%= lang === 'it'
+      ? 'Usiamo Google Analytics per capire come viene usato il sito. Solo se accetti.'
+      : 'We use Google Analytics to understand how the site is used. Only if you accept.' %>
+    <a href="/<%= lang %>/privacy"><%= lang === 'it' ? 'Informativa sulla privacy' : 'Privacy policy' %></a>
+  </p>
+  <div class="cookie-consent-actions">
+    <button type="button" class="cookie-consent-reject" data-cookie="denied"><%= lang === 'it' ? 'Rifiuta' : 'Reject' %></button>
+    <button type="button" class="cookie-consent-accept" data-cookie="granted"><%= lang === 'it' ? 'Accetta' : 'Accept' %></button>
+  </div>
+</aside>
 </body>
 </html>

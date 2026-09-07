@@ -1,0 +1,17 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<article class="legal-page">
+  <h1><%= doc.title %></h1>
+  <p class="legal-updated"><%= doc.updated %></p>
+  <% for (const section of doc.sections) { %>
+    <section class="legal-section">
+      <h2><%= section.heading %></h2>
+      <% for (const paragraph of section.body) { %>
+        <p><%= paragraph %></p>
+      <% } %>
+    </section>
+  <% } %>
+</article>
+
+<%- include('partials/footer') %>

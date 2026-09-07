@@ -22,9 +22,13 @@ Site, documentation, and API for **ndujaGames** at [nduja.games](https://nduja.g
 | `/it/docs` | Documentation index (Italian) |
 | `/en/docs/:project` | How to play (English) |
 | `/it/docs/:project` | How to play (Italian) |
+| `/en/privacy` | Privacy policy (English) |
+| `/it/privacy` | Informativa sulla privacy (Italian) |
+| `/en/terms` | Terms of service (English) |
+| `/it/terms` | Termini di servizio (Italian) |
 | `/api/v1/health` | Service health JSON |
 
-Terms and privacy live in each game, not on this hub.
+The hub has terms, privacy, and a cookie banner. Each game also has in-app terms and privacy.
 
 ## Development
 
