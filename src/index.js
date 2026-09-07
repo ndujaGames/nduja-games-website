@@ -19,11 +19,30 @@ if (config.trustProxy) {
 }
 
 const helmetOptions = { crossOriginResourcePolicy: { policy: "cross-origin" } };
+helmetOptions.contentSecurityPolicy = {
+  useDefaults: true,
+  directives: {
+    scriptSrc: ["'self'", "https://www.googletagmanager.com"],
+    connectSrc: [
+      "'self'",
+      "https://www.googletagmanager.com",
+      "https://www.google-analytics.com",
+      "https://analytics.google.com",
+      "https://*.google-analytics.com",
+      "https://*.analytics.google.com",
+      "https://stats.g.doubleclick.net",
+    ],
+    imgSrc: [
+      "'self'",
+      "data:",
+      "https://www.google-analytics.com",
+      "https://www.googletagmanager.com",
+      "https://*.google-analytics.com",
+    ],
+    ...(config.isProduction ? {} : { "upgrade-insecure-requests": null }),
+  },
+};
 if (!config.isProduction) {
-  helmetOptions.contentSecurityPolicy = {
-    useDefaults: true,
-    directives: { "upgrade-insecure-requests": null },
-  };
   helmetOptions.strictTransportSecurity = false;
 }
 app.use(helmet(helmetOptions));
