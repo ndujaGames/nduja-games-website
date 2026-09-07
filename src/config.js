@@ -60,7 +60,7 @@ export const projects = [
       it: "Sopravvivi il più a lungo possibile — evita che una singola pila raggiunga la cima, e non restare senza mosse.",
     },
     href: process.env.CHROMAWELL_URL || "https://chromawell.nduja.games",
-    image: "/img/chromawell-v1.png",
+    image: "/img/chromawell-v2.png",
     imageAlt: {
       en: "Chromawell well and fusion board",
       it: "Pozzo e tabellone Chromawell",

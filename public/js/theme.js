@@ -1,4 +1,5 @@
 const STORAGE = "nduja-theme";
+const COOKIES = "nduja-cookies";
 
 function storedTheme() {
   try {
@@ -22,6 +23,37 @@ function applyTheme(theme) {
   btn.setAttribute("aria-label", night ? (it ? "Tema giorno" : "Day theme") : (it ? "Tema notte" : "Night theme"));
 }
 
+function cookieModal() {
+  return document.getElementById("cookie-modal");
+}
+
+function openCookies() {
+  cookieModal()?.classList.add("is-open");
+}
+
+function closeCookies() {
+  cookieModal()?.classList.remove("is-open");
+}
+
+function savedCookies() {
+  try {
+    const value = localStorage.getItem(COOKIES);
+    if (value === "yes" || value === "no") return value;
+  } catch {
+    // ignore
+  }
+  return null;
+}
+
+function saveCookies(value) {
+  try {
+    localStorage.setItem(COOKIES, value);
+  } catch {
+    // ignore
+  }
+  closeCookies();
+}
+
 applyTheme(storedTheme());
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -35,4 +67,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     applyTheme(next);
   });
+
+  document.getElementById("cookie-open")?.addEventListener("click", openCookies);
+  document.getElementById("cookie-no")?.addEventListener("click", () => saveCookies("no"));
+  document.getElementById("cookie-yes")?.addEventListener("click", () => saveCookies("yes"));
+  if (!savedCookies()) openCookies();
 });
