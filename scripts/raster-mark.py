@@ -11,9 +11,9 @@ def resize(size):
 
 
 for size, name in [
-    (16, "favicon-16.png"),
-    (32, "favicon-32.png"),
-    (128, "favicon.png"),
+    (16, "favicon-16-v1.png"),
+    (32, "favicon-32-v1.png"),
+    (128, "favicon-v1.png"),
 ]:
     path = public / name
     resize(size).save(path, "PNG", optimize=True)
@@ -22,9 +22,9 @@ for size, name in [
 ico_sizes = [16, 32, 48]
 ico_images = [resize(s) for s in ico_sizes]
 ico_images[0].save(
-    public / "favicon.ico",
+    public / "favicon-v1.ico",
     format="ICO",
     sizes=[(s, s) for s in ico_sizes],
     append_images=ico_images[1:],
 )
-print("wrote favicon.ico")
+print("wrote favicon-v1.ico")

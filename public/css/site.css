@@ -13,7 +13,7 @@ html[data-theme="day"] {
   --stripe: rgba(0, 0, 0, 0.04);
   --badge: rgba(128, 32, 80, 0.08);
   --code-bg: rgba(0, 0, 0, 0.05);
-  --page-art: url("/img/background.jpg");
+  --page-art: url("/img/background-v1.jpg");
 }
 
 html[data-theme="night"] {
@@ -30,7 +30,7 @@ html[data-theme="night"] {
   --stripe: rgba(255, 255, 255, 0.04);
   --badge: rgba(224, 144, 176, 0.14);
   --code-bg: rgba(255, 255, 255, 0.08);
-  --page-art: url("/img/background-night.jpg");
+  --page-art: url("/img/background-night-v1.jpg");
 }
 
 * {

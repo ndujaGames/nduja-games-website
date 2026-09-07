@@ -3,7 +3,7 @@
 
 <section class="hero">
   <h1 class="hero-title">
-    <img class="hero-logo hero-logo-day" src="/img/nduja-logo.png?v=<%= assetVersion %>-ui" alt="<%= siteMark %><%= siteName %>" width="1400" height="211" /><img class="hero-logo hero-logo-night" src="/img/nduja-logo-white.png?v=<%= assetVersion %>-ui" alt="" width="1400" height="211" />
+    <img class="hero-logo hero-logo-day" src="/img/nduja-logo-v1.png" alt="<%= siteMark %><%= siteName %>" width="1400" height="211" /><img class="hero-logo hero-logo-night" src="/img/nduja-logo-white-v1.png" alt="" width="1400" height="211" />
   </h1>
 </section>
 
@@ -23,10 +23,10 @@
           <figure class="project-shot-wrap">
             <% if (project.href) { %>
               <a href="<%= project.href %>" rel="noreferrer" target="_blank">
-                <img class="project-shot" src="<%= project.image %>?v=<%= assetVersion %>" alt="<%= project.imageAlt?.[lang] || project.imageAlt?.en || project.name %>" loading="lazy" />
+                <img class="project-shot" src="<%= project.image %>" alt="<%= project.imageAlt?.[lang] || project.imageAlt?.en || project.name %>" loading="lazy" />
               </a>
             <% } else { %>
-              <img class="project-shot" src="<%= project.image %>?v=<%= assetVersion %>" alt="<%= project.imageAlt?.[lang] || project.imageAlt?.en || project.name %>" loading="lazy" />
+              <img class="project-shot" src="<%= project.image %>" alt="<%= project.imageAlt?.[lang] || project.imageAlt?.en || project.name %>" loading="lazy" />
             <% } %>
           </figure>
         <% } %>

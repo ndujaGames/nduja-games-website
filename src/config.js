@@ -56,7 +56,7 @@ export const projects = [
       it: "Sopravvivi il più a lungo possibile — evita che una singola pila raggiunga la cima, e non restare senza mosse.",
     },
     href: process.env.CHROMAWELL_URL || "https://chromawell.nduja.games",
-    image: "/img/chromawell.png",
+    image: "/img/chromawell-v1.png",
     imageAlt: {
       en: "Chromawell well and fusion board",
       it: "Pozzo e tabellone Chromawell",
@@ -72,7 +72,7 @@ export const projects = [
       it: "Piazza una A e una B per colore. Segui le regole su righe, colonne, diagonali e contatti per risolvere lo schema.",
     },
     href: process.env.ABDOKU_URL || "https://abdoku.nduja.games",
-    image: "/img/abdoku.png",
+    image: "/img/abdoku-v1.png",
     imageAlt: {
       en: "ABdoku puzzle grid with A and B letters",
       it: "Schema ABdoku con lettere A e B",
@@ -88,7 +88,7 @@ export const projects = [
       it: "Passa il testimone da pezzo a pezzo. Cattura con le mosse degli scacchi fino a ripulire la scacchiera — o quasi.",
     },
     href: process.env.CHESSRELAY_URL || "https://chessrelay.nduja.games",
-    image: "/img/chessrelay.png",
+    image: "/img/chessrelay-v1.png",
     imageAlt: {
       en: "ChessRelay board with chess pieces",
       it: "Scacchiera ChessRelay con i pezzi",
@@ -104,7 +104,7 @@ export const projects = [
       it: "Una fune tesa. Trova il mezzo esatto, poi spezzala. Se sbagli, le due estremità ti dicono quanto eri lontano.",
     },
     href: process.env.MIDCOIL_URL || "https://midcoil.nduja.games",
-    image: "/img/midcoil.png",
+    image: "/img/midcoil-v1.png",
     imageAlt: {
       en: "Midcoil rope coiled on a dotted grid",
       it: "Fune Midcoil avvolta su una griglia di punti",
@@ -120,7 +120,7 @@ export const projects = [
       it: "Percorri l’intero tabellone, numero per numero, fino a lasciarne uno solo.",
     },
     href: process.env.HEXACT_URL || "https://hexact.nduja.games",
-    image: "/img/hexact.png",
+    image: "/img/hexact-v1.png",
     imageAlt: {
       en: "Hexact hexagonal board with numbered tiles",
       it: "Tabellone esagonale Hexact con tessere numerate",
