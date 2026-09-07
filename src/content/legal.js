@@ -10,7 +10,7 @@ export function getLegalDoc(kind, lang) {
               heading: "Titolare",
               body: [
                 "Questa informativa si applica a nduja.games, sito di ’ndujaGames.",
-                "Contatto: ndujagames@sullo.co",
+                "Contatto: ndujagames@sameteam.co",
                 "Ogni gioco (Chromawell, ABdoku, ChessRelay, Midcoil, Hexact) ha anche una propria informativa, nelle Impostazioni del gioco.",
               ],
             },
@@ -46,7 +46,7 @@ export function getLegalDoc(kind, lang) {
               heading: "Who we are",
               body: [
                 "This policy applies to nduja.games, the ’ndujaGames site.",
-                "Contact: ndujagames@sullo.co",
+                "Contact: ndujagames@sameteam.co",
                 "Each game (Chromawell, ABdoku, ChessRelay, Midcoil, Hexact) also has its own policy, in the game Settings.",
               ],
             },
@@ -102,7 +102,7 @@ export function getLegalDoc(kind, lang) {
           },
           {
             heading: "Contatti",
-            body: ["Domande: ndujagames@sullo.co"],
+            body: ["Domande: ndujagames@sameteam.co"],
           },
         ],
       }
@@ -132,7 +132,7 @@ export function getLegalDoc(kind, lang) {
           },
           {
             heading: "Contact",
-            body: ["Questions: ndujagames@sullo.co"],
+            body: ["Questions: ndujagames@sameteam.co"],
           },
         ],
       };

@@ -2,12 +2,28 @@ const GA_ID = "G-8EBCHLNHFM";
 const STORAGE = "nduja-analytics-consent";
 const COOKIE = "nduja_analytics_consent";
 
+function hostname() {
+  return location.hostname;
+}
+
 function isNdujaHost() {
-  const host = location.hostname;
+  const host = hostname();
   return host === "nduja.games" || host.endsWith(".nduja.games");
 }
 
+function isLocalHost() {
+  const host = hostname();
+  return (
+    host === "localhost" ||
+    host === "127.0.0.1" ||
+    host === "[::1]" ||
+    host.endsWith(".local") ||
+    host.endsWith(".localhost")
+  );
+}
+
 function needsConsent() {
+  if (isLocalHost()) return true;
   try {
     const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
     if (tz.startsWith("Europe/")) return true;
@@ -21,13 +37,18 @@ function needsConsent() {
 function readConsent() {
   if (isNdujaHost()) {
     const match = document.cookie.match(/(?:^|; )nduja_analytics_consent=([^;]*)/);
-    if (match) return decodeURIComponent(match[1]);
+    if (match) {
+      const value = decodeURIComponent(match[1] ?? "");
+      if (value === "granted" || value === "denied") return value;
+    }
   }
   try {
-    return localStorage.getItem(STORAGE);
+    const value = localStorage.getItem(STORAGE);
+    if (value === "granted" || value === "denied") return value;
   } catch {
-    return null;
+    // ignore
   }
+  return null;
 }
 
 function writeConsent(value) {
@@ -48,11 +69,11 @@ function loadGa() {
   if (gaLoaded) return;
   gaLoaded = true;
   window.dataLayer = window.dataLayer || [];
-  window.gtag = function gtag() {
+  window.gtag = function () {
     window.dataLayer.push(arguments);
   };
-  gtag("js", new Date());
-  gtag("config", "G-8EBCHLNHFM", {
+  window.gtag("js", new Date());
+  window.gtag("config", GA_ID, {
     linker: {
       domains: [
         "nduja.games",
@@ -70,14 +91,26 @@ function loadGa() {
   document.head.appendChild(gtm);
 }
 
+function banner() {
+  return document.getElementById("cookie-consent");
+}
+
 function hideBanner() {
-  const root = document.getElementById("cookie-consent");
-  if (root) root.hidden = true;
+  const root = banner();
+  if (!root) return;
+  if (typeof root.close === "function" && root.open) root.close();
+  root.classList.remove("is-open");
 }
 
 function showBanner() {
-  const root = document.getElementById("cookie-consent");
-  if (root) root.hidden = false;
+  const root = banner();
+  if (!root) return;
+  root.classList.add("is-open");
+  if (typeof root.showModal === "function") {
+    if (!root.open) root.showModal();
+    return;
+  }
+  root.removeAttribute("hidden");
 }
 
 function applyConsent(value) {
@@ -88,22 +121,30 @@ function applyConsent(value) {
   else if (prev === "granted") location.reload();
 }
 
+document.addEventListener("click", (event) => {
+  const target = event.target instanceof Element ? event.target : null;
+  if (!target) return;
+  if (target.closest("#cookie-settings")) {
+    event.preventDefault();
+    showBanner();
+    return;
+  }
+  const choice = target.closest("[data-cookie]");
+  if (!choice) return;
+  const value = choice.getAttribute("data-cookie");
+  if (value === "granted" || value === "denied") applyConsent(value);
+});
+
 function init() {
+  const root = banner();
+  if (root) {
+    root.addEventListener("cancel", (event) => {
+      if (!readConsent()) event.preventDefault();
+    });
+  }
   const choice = readConsent();
   if (choice === "granted" || (!choice && !needsConsent())) loadGa();
   if (!choice && needsConsent()) showBanner();
-  else hideBanner();
-
-  document.querySelectorAll("[data-cookie]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const value = btn.getAttribute("data-cookie");
-      if (value === "granted" || value === "denied") applyConsent(value);
-    });
-  });
-  document.getElementById("cookie-settings")?.addEventListener("click", (event) => {
-    event.preventDefault();
-    showBanner();
-  });
 }
 
 if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
