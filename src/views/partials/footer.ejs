@@ -1,5 +1,22 @@
 </main>
 <footer class="site-footer">
+  <div class="footer-tools">
+    <button type="button" class="theme-btn" id="theme-toggle" aria-label="<%= lang === 'it' ? 'Tema notte' : 'Night theme' %>" aria-pressed="false">
+      <svg class="theme-icon theme-icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+        <path fill="currentColor" d="M21 14.3A9 9 0 0 1 9.7 3a7.5 7.5 0 1 0 11.3 11.3z"/>
+      </svg>
+      <svg class="theme-icon theme-icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+        <circle cx="12" cy="12" r="4" fill="currentColor"/>
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M12 3v2.2M12 18.8V21M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M3 12h2.2M18.8 12H21M4.93 19.07l1.56-1.56M17.51 6.49l1.56-1.56"/>
+        </g>
+      </svg>
+    </button>
+    <div class="lang-switch" role="group" aria-label="<%= lang === 'it' ? 'Lingua' : 'Language' %>">
+      <a href="<%= langPath('en') %>" class="lang-btn<%= lang === 'en' ? ' is-on' : '' %>" lang="en" hreflang="en" aria-current="<%= lang === 'en' ? 'true' : 'false' %>">EN</a>
+      <a href="<%= langPath('it') %>" class="lang-btn<%= lang === 'it' ? ' is-on' : '' %>" lang="it" hreflang="it" aria-current="<%= lang === 'it' ? 'true' : 'false' %>">IT</a>
+    </div>
+  </div>
   <p class="site-footer-line">
     © <%= year %> <span class="brand-mark"><%= siteMark %></span><%= siteName %>
     <span class="footer-sep" aria-hidden="true">|</span>
