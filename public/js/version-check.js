@@ -81,9 +81,9 @@
     const remote = await fetchRemote();
     if (!remote) return;
     if (remote.reload > localReload) {
-      if (!reloadShown && prompt) {
+      if (!reloadShown) {
         reloadShown = true;
-        prompt.hidden = false;
+        location.reload();
       }
       return;
     }

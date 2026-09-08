@@ -32,7 +32,7 @@ export const config = {
   /** Display / compare version; independent of asset cache-bust override. */
   appVersion: pkg.version,
   /** Increment when a deploy must ask open tabs to reload. */
-  appReload: 1,
+  appReload: 2,
   /** Bumped via package.json version to bust CDN cache for static CSS. */
   assetVersion: process.env.ASSET_VERSION || pkg.version,
   postgres: {
