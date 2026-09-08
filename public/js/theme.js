@@ -79,7 +79,10 @@ function loadGa() {
     window.dataLayer.push(arguments);
   };
   window.gtag("js", new Date());
-  window.gtag("config", GA_ID, { linker: { domains: GA_DOMAINS } });
+  window.gtag("config", GA_ID, {
+    linker: { domains: GA_DOMAINS },
+    game: "site",
+  });
   const script = document.createElement("script");
   script.async = true;
   script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
