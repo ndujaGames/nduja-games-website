@@ -124,7 +124,7 @@ export const projects = [
       it: "Percorri l’intero tabellone, numero per numero, fino a lasciarne uno solo.",
     },
     href: process.env.HEXACT_URL || "https://hexact.nduja.games",
-    image: "/img/hexact-v1.png",
+    image: "/img/hexact-v2.png",
     imageAlt: {
       en: "Hexact hexagonal board with numbered tiles",
       it: "Tabellone esagonale Hexact con tessere numerate",
