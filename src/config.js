@@ -108,7 +108,7 @@ export const projects = [
       it: "Una fune tesa. Trova il mezzo esatto, poi spezzala. Se sbagli, le due estremità ti dicono quanto eri lontano.",
     },
     href: process.env.MIDCOIL_URL || "https://midcoil.nduja.games",
-    image: "/img/midcoil-v2.png",
+    image: "/img/midcoil-v1.png",
     imageAlt: {
       en: "Midcoil rope coiled on a dotted grid",
       it: "Fune Midcoil avvolta su una griglia di punti",
